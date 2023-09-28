@@ -1,16 +1,5 @@
 Hello World
 Added new text here!
 This is cool!
-1)Practice  for pull requests.....
-
-2) Added character model and texture
-
-3)Added jumping script - tested - working - had MANY errors, all fixed
-
-4)bugs monitored
-
-5)added running key - working
-
-6) altered running and jump speed and force
-
-7)saved
+Practice  for pull requests.....
+One more!
