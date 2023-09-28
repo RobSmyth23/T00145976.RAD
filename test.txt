@@ -1,5 +1,12 @@
 Hello World
 Added new text here!
 This is cool!
-Practice  for pull requests.....
-One more!
+1)Practice  for pull requests.....
+
+2) Added character model and texture
+
+3)Added jumping script - tested - working - had MANY errors, all fixed
+
+4)bugs monitored
+
+5)saved

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Char_Control : MonoBehaviour
 {
-    float currentSpeed, walkingSpeed = 2, runningSpeed = 4;
+    private float currentSpeed;
+    private float walkingSpeed = 2;
     private float turningSpeed = 180;
     Animator myAnimator;
 
@@ -44,5 +45,7 @@ public class Char_Control : MonoBehaviour
 
             transform.Rotate(Vector3.down, turningSpeed * Time.deltaTime);
         }
+       
+        
     }
 }
