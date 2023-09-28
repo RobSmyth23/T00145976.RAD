@@ -6,19 +6,20 @@ public class Char_Control : MonoBehaviour
 {
     private float currentSpeed;
     private float walkingSpeed = 2;
+    private float runningSpeed = 4;
     private float turningSpeed = 180;
     Animator myAnimator;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         currentSpeed = walkingSpeed;
+        runningSpeed = walkingSpeed * 3;
         myAnimator = GetComponent<Animator>();
 
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         myAnimator.SetBool("IsWalking", false);
@@ -27,6 +28,11 @@ public class Char_Control : MonoBehaviour
         {
             myAnimator.SetBool("IsWalking", true);
             transform.position += currentSpeed * transform.forward * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            myAnimator.SetBool("IsRunning", true);
+            transform.position += runningSpeed * transform.forward * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.S))
