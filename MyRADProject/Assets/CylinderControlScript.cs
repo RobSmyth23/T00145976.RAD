@@ -25,7 +25,7 @@ public class CylinderControlScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
 
-            myRB.AddExplosionForce(100,transform.position + Vector3.down,5);
+            myRB.AddExplosionForce(10,transform.position + Vector3.down,5);
 
 
             //  transform.position += transform.forward * Time.deltaTime;
