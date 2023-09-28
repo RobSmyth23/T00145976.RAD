@@ -9,4 +9,8 @@ This is cool!
 
 4)bugs monitored
 
-5)saved
+5)added running key - working
+
+6) altered running and jump speed and force
+
+7)saved
