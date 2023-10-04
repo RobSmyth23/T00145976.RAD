@@ -14,14 +14,14 @@ public class Char_Control : MonoBehaviour
     public Vector3 boxSize;
     public float maxDistance;
     public LayerMask layerMask;
-    public float jumpforce = 1f;
+    public float jumpforce = 0.10f;
     public GameObject snowballCloneTemplate;
 
 
     void Start()
     {
         currentSpeed = walkingSpeed;
-        runningSpeed = walkingSpeed * 3;
+        runningSpeed = walkingSpeed * 2;
         myAnimator = GetComponent<Animator>();
         
         rb = GetComponent<Rigidbody>();
@@ -33,6 +33,8 @@ public class Char_Control : MonoBehaviour
     void Update()
     {
         myAnimator.SetBool("IsWalking", false);
+        myAnimator.SetBool("IsRunning", false);
+        myAnimator.SetBool("IsJumping", false);
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -42,7 +44,7 @@ public class Char_Control : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             myAnimator.SetBool("IsRunning", true);
-            transform.position += runningSpeed * transform.forward * Time.deltaTime;
+            transform.position += currentSpeed * transform.forward * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.S))
@@ -61,12 +63,12 @@ public class Char_Control : MonoBehaviour
 
             transform.Rotate(Vector3.down, turningSpeed * Time.deltaTime);
         }
-        if ((Input.GetKeyDown(KeyCode.Space)))
+        if ((Input.GetKey(KeyCode.Space)))
         {
-            rb.AddForce(transform.up * jumpforce, ForceMode.Impulse);
             myAnimator.SetBool("IsJumping", true);
+            rb.AddForce(transform.up * jumpforce, ForceMode.Impulse);
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
            GameObject newGo = Instantiate(snowballCloneTemplate);
             
