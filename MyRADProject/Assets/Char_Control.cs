@@ -1,22 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 using UnityEngine;
 
 public class Char_Control : MonoBehaviour
 {
-    private float currentSpeed;
-    private float walkingSpeed = 2;
-    private float runningSpeed = 4;
+    float currentSpeed;
+    float walkingSpeed = 2;
+    float runningSpeed = 4;
     private float turningSpeed = 180;
     Animator myAnimator;
+    Rigidbody rb;
+    public Vector3 boxSize;
+    public float maxDistance;
+    public LayerMask layerMask;
+    public float jumpforce = 1f;
+    public GameObject snowballCloneTemplate;
 
-    
+
     void Start()
     {
         currentSpeed = walkingSpeed;
         runningSpeed = walkingSpeed * 3;
         myAnimator = GetComponent<Animator>();
+        
+        rb = GetComponent<Rigidbody>();
 
+        
 
     }
 
@@ -51,7 +61,21 @@ public class Char_Control : MonoBehaviour
 
             transform.Rotate(Vector3.down, turningSpeed * Time.deltaTime);
         }
-       
+        if ((Input.GetKeyDown(KeyCode.Space)))
+        {
+            rb.AddForce(transform.up * jumpforce, ForceMode.Impulse);
+            myAnimator.SetBool("IsJumping", true);
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+           GameObject newGo = Instantiate(snowballCloneTemplate);
+            
+           snowballscript mySnowBall = newGo.GetComponent<snowballscript>();
+
+            mySnowBall.ImThrowingYou(this);
+        }
         
+        }
+    
+           
     }
-}
