@@ -63,10 +63,10 @@ public class Char_Control : MonoBehaviour
 
             transform.Rotate(Vector3.down, turningSpeed * Time.deltaTime);
         }
-        if ((Input.GetKey(KeyCode.Space)))
+        if ((Input.GetKeyDown(KeyCode.Space)))
         {
             myAnimator.SetBool("IsJumping", true);
-            rb.AddForce(transform.up * jumpforce, ForceMode.Impulse);
+            rb.AddExplosionForce(600, transform.position + Vector3.down, 5);
         }
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {

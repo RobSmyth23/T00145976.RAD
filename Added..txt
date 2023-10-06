@@ -9,4 +9,5 @@ Added______
 7) smoothened transitions from idle to walking and running and between all three!
 8) added animations to running, jumping, falling and landing
 (Still havent got them timed, player model lands and still in falling animation, etc.)
+9) added fences, grass, terrain, textures and trees. Removed old stone blocks and platform. ReConfigured jumpin mechanism.
 
