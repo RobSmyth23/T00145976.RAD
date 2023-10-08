@@ -1,5 +1,17 @@
 Added______
 
+Keybinds
+________________________
+w- walk forward
+a- turn left
+s-turn right
+d-walk backwards
+space- jump
+right mouse click- throw arrow
+shift- run
+
+Note: when jumping while already either walking or running, the animation for jumping does not activate!
+
 1)box wall, player model
 2)trees with textures
 3)POV camera
@@ -10,4 +22,10 @@ Added______
 8) added animations to running, jumping, falling and landing
 (Still havent got them timed, player model lands and still in falling animation, etc.)
 9) added fences, grass, terrain, textures and trees. Removed old stone blocks and platform. ReConfigured jumpin mechanism.
+10) Added a house on a platform. Textured the house!
+11)retextured the snowball into a dummy arrow with softhead! Added particles to this being thrown.
+11.5) added particle trail to arrow!
+12)added target practice on pedestals,
+13)created new prefabs for easier building
+14)Reconfigured controls
 

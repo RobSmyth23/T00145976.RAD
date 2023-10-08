@@ -21,7 +21,7 @@ public class Char_Control : MonoBehaviour
     void Start()
     {
         currentSpeed = walkingSpeed;
-        runningSpeed = walkingSpeed * 2;
+        runningSpeed = (float)(walkingSpeed * 2.5);
         myAnimator = GetComponent<Animator>();
         
         rb = GetComponent<Rigidbody>();
@@ -66,7 +66,7 @@ public class Char_Control : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.Space)))
         {
             myAnimator.SetBool("IsJumping", true);
-            rb.AddExplosionForce(600, transform.position + Vector3.down, 5);
+            rb.AddExplosionForce(650, transform.position + Vector3.down, 5);
         }
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
