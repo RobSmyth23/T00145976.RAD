@@ -7,6 +7,7 @@ public class snowballscript : MonoBehaviour
 { 
     Rigidbody rb;
     internal int check = 5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +19,20 @@ public class snowballscript : MonoBehaviour
     {
        
     }
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("oof");
+        DealWithHits thingIHit = collision.gameObject.GetComponent<DealWithHits>();
+        if (thingIHit != null)
+        {
+            thingIHit.IHitYou();
+        }
+    }
     internal void ImThrowingYou(Char_Control char_Control)
     {
+        transform.position = char_Control.transform.position + Vector3.up + 3 * char_Control.transform.forward;
+
         rb = GetComponent<Rigidbody>();
-        transform.position = char_Control.transform.position + Vector3.up + char_Control.transform.forward;
-        rb.velocity = 2 * (Vector3.up + 6 * char_Control.transform.forward);
+        rb.velocity = 2 * (Vector3.up + 4 * char_Control.transform.forward);
     }
 }
