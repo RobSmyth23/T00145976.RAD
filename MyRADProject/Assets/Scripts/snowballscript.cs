@@ -21,7 +21,7 @@ public class snowballscript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        print("oof");
+        print("You hit me!!!! Ouch!");
         DealWithHits thingIHit = collision.gameObject.GetComponent<DealWithHits>();
         if (thingIHit != null)
         {

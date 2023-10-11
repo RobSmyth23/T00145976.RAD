@@ -16,6 +16,7 @@ public class Char_Control : MonoBehaviour
     public LayerMask layerMask;
     public float jumpforce = 0.10f;
     public GameObject snowballCloneTemplate;
+    bool IsJumpingUp, IsFalling;
 
 
     void Start()
@@ -35,6 +36,13 @@ public class Char_Control : MonoBehaviour
         myAnimator.SetBool("IsWalking", false);
         myAnimator.SetBool("IsRunning", false);
         myAnimator.SetBool("IsJumping", false);
+        if (IsJumpingUp && (rb.velocity.y <= 0)) IsFalling = true;
+        if (IsFalling && (rb.velocity.y >= 0))
+        {
+            myAnimator.SetBool("IsJumping", false);
+            IsFalling = false;
+            IsJumpingUp = false;
+        }
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -66,7 +74,8 @@ public class Char_Control : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.Space)))
         {
             myAnimator.SetBool("IsJumping", true);
-            rb.AddExplosionForce(650, transform.position + Vector3.down, 5);
+            IsJumpingUp = true;
+            rb.AddExplosionForce(1100, transform.position + Vector3.down, 5);
         }
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
