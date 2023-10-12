@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class DealWithHits : MonoBehaviour
 {
-    int Health = 500;
+    int Health = 300;
     internal void IHitYou()
     {
         Health -= 20;
 
-        if (Health < 50)
+        if (Health < 100)
         {
             GetComponentInChildren<Renderer>().material.color = Color.magenta;
         }
