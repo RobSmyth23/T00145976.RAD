@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Char_Control : MonoBehaviour
 {
     float currentSpeed;
-    float walkingSpeed = 2;
+    float walkingSpeed = 3;
     float runningSpeed = 4;
-    private float turningSpeed = 180;
+    private float turningSpeed = 120;
     Animator myAnimator;
     Rigidbody rb;
+    BoxCollider bc;
     public Vector3 boxSize;
     public float maxDistance;
     public LayerMask layerMask;
@@ -26,7 +28,6 @@ public class Char_Control : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         
         rb = GetComponent<Rigidbody>();
-
         
 
     }
@@ -76,7 +77,9 @@ public class Char_Control : MonoBehaviour
             myAnimator.SetBool("IsJumping", true);
             IsJumpingUp = true;
             rb.AddExplosionForce(1100, transform.position + Vector3.down, 5);
+           
         }
+        
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
            GameObject newGo = Instantiate(snowballCloneTemplate);

@@ -1,31 +1,27 @@
-Added______
+Patch Notes 0.0.4c 12/10/2023
+__________________________
 
-Keybinds
-________________________
-w- walk forward
-a- turn left
-s-turn right
-d-walk backwards
-space- jump
-right mouse click- throw arrow
-shift- run
+Textures:
+Smoothened textures, added snowtop mountains
+Made the sun brighter
+Added grass to the general play area
 
-Note: when jumping while already either walking or running, the animation for jumping does not activate!
+PeD:
+Smoothened animations, completed transform from one animation to another
+adjusted running, and walking speed and the jump height
 
-1)box wall, player model
-2)trees with textures
-3)POV camera
-4)obstacle course, boxes and spheres, with textures
-5)added treasure chest on a platform, which cannot be seen unless you are on top of the obstacle course
-6)added particle effects for treasure chest and leaf simulation
-7) smoothened transitions from idle to walking and running and between all three!
-8) added animations to running, jumping, falling and landing
-(Still havent got them timed, player model lands and still in falling animation, etc.)
-9) added fences, grass, terrain, textures and trees. Removed old stone blocks and platform. ReConfigured jumpin mechanism.
-10) Added a house on a platform. Textured the house!
-11)retextured the snowball into a dummy arrow with softhead! Added particles to this being thrown.
-11.5) added particle trail to arrow!
-12)added target practice on pedestals,
-13)created new prefabs for easier building
-14)Reconfigured controls
+Interactive:
+Made the snowballs shoot faster
+Fixed the texture of the snowball
+The prefabs of target practice were height adjusted and health adjusted
+Made the text dummy stronger and more grounded
+
+Controls:
+W-Walk forward
+A-Turn Left
+S-Turn Right
+D-Walk Backwards
+Shift- Run in current direction
+Space- Jump
+Left Click(mouse)- Throw Snowball
 
